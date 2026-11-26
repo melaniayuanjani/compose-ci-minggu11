@@ -1,5 +1,5 @@
 name: Compose Check
-
+run-name: "Bonus: Pengujian Siklus Layanan Docker Compose di GitHub Actions"
 on:
   push:
     branches: [main]
