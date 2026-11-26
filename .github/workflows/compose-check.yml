@@ -1,0 +1,28 @@
+name: Compose Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Siapkan .env dari contoh
+        run: cp .env.example .env
+
+      - name: Validasi file compose
+        run: docker compose config -q
+
+      - name: Jalankan stack
+        run: docker compose up -d
+
+      - name: Cek status container
+        run: docker compose ps
+
+      - name: Matikan stack
+        if: always()
+        run: docker compose down
