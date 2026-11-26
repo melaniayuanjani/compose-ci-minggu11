@@ -69,11 +69,9 @@ Seluruh tahapan bonus berhasil dijalankan.
 
 ## 5. Kendala dan Penyelesaian
 
-Selama pengerjaan proyek, terdapat beberapa kendala dalam proses validasi konfigurasi dan autentikasi GitHub.
+Selama proses pengerjaan, saya menemukan kendala ketika melakukan pengujian dengan sengaja mengubah susunan indentasi pada file workflow. Akibatnya, pemeriksaan pada Pull Request gagal dan menampilkan pesan kesalahan YAML, yaitu mapping values are not allowed in this context. Hal tersebut terjadi karena posisi indentasi pada salah satu baris tidak sesuai, sehingga YAML tidak dapat membaca struktur konfigurasi dengan benar.
 
-Pengujian kegagalan dilakukan dengan mengubah konfigurasi Compose sehingga workflow menampilkan status gagal. Setelah kesalahan diperbaiki, pemeriksaan berhasil dijalankan kembali.
-
-Selain itu, kendala autentikasi saat mengirim perubahan dari Ubuntu ke GitHub diselesaikan dengan membuat Personal Access Token baru.
+Untuk mengatasinya, saya memeriksa kembali bagian yang mengalami kesalahan, kemudian memperbaiki indentasi agar kembali sesuai dengan struktur yang seharusnya. Setelah perubahan disimpan dan dikirim ulang ke repository, proses pemeriksaan berhasil berjalan kembali dan statusnya berubah menjadi hijau.
 
 ## 6. Refleksi
 
